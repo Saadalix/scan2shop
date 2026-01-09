@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Shop {% if categoryName %}- {{ categoryName }}{% endif %}
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="heading">
+        <h1>our shop</h1>
+        <p> <a href="/">home >></a> shop </p>
+    </div>
+    
+    <section class="category">
+        <h1 class="title"> our <span>category</span>  </h1>
+
+        <div class="box-container">
+            <a class="box" data-attachedData="grocery" onclick="Category('grocery')">
+                <img src="../static/images/new-cat-1.png" alt="">
+                <h3>Groceries</h3>
+            </a>
+
+            <a class="box" data-attachedData="personal-care" onclick="Category('personal-care')">
+                <img src="../static/images/new-cat-2.png" alt="">
+                <h3>Personal Care</h3>
+            </a>
+
+            <a class="box" data-attachedData="household" onclick="Category('household')">
+                <img src="../static/images/new-cat-3.png" alt="">
+                <h3>Household</h3>
+            </a>
+
+            <a class="box" data-attachedData="food-and-beverages" onclick="Category('food-and-beverages')">
+                <img src="../static/images/new-cat-4.png" alt="">
+                <h3>Food and Beverages</h3>
+            </a>
+
+            <a class="box" data-attachedData="health-and-wellness" onclick="Category('health-and-wellness')">
+                <img src="../static/images/new-cat-5.png" alt="">
+                <h3>Health and Wellness</h3>
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="products">
+
+
+        {% if search %}
+            <h1 class="title"> Search: <span>{{ search }}</span> </h1>
+        {% else %}
+            {% if categoryName %}
+                <h1 class="title"> Category <span>{{ categoryName }}</span> </h1>
+            {% else %}
+                <h1 class="title"> our <span>products</span> </h1>
+            {% endif %}
+        {% endif %}
+
+        <div class="box-container">
+
+            {% for product in products %}
+                <div class="box">
+                    <div class="icons">
+                        <a class="fas fa-shopping-cart productIcon" data-sku="{{ product.SKU }}" onclick="AddToCart(this)"></a>
+                        <a class="fas fa-eye productIcon" data-slug="{{ product.slug }}" onclick="ViewProduct(this)"></a>
+                    </div>
+                    <div class="image">
+                        <img src="{{ product.ImageSrc }}" alt="product.Title">
+                    </div>
+                    <div class="content">
+                        <h3>{{ product.Title }}</h3>
+                        <div class="price">£{{ product.Price }}</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+            
+        </div>
+
+    </section>
+
+{% endblock %}

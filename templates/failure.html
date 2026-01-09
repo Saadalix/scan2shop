@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Scan2Shop - Payment Failure
+{% endblock %}
+
+{% block stylesheet %}
+    <style>
+        /* CSS for the modal dialog */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            height: auto;
+        }
+        p {
+            font-size: larger;
+        }
+        .modal-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .buttons-container{
+            width: 130px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>Payment Failure! Please try again.</p>
+            <div class="modal-buttons">
+                <div class="buttons-container">
+                    <button id="retryButton">Retry</button>
+                    <button id="okButton">Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // JavaScript code to handle the modal dialog
+    window.onload = function() {
+        var modal = document.getElementById('myModal');
+
+        // Display the modal dialog
+        modal.style.display = 'flex';
+
+        // Retry button event listener
+        document.getElementById('retryButton').addEventListener('click', function() {
+            // Redirect to /checkout
+            window.location.href = '/checkout';
+        });
+
+        // OK button event listener
+        document.getElementById('okButton').addEventListener('click', function() {
+            // Redirect to /
+            window.location.href = '/';
+        });
+    };
+    </script>
+{% endblock %}
+
+
