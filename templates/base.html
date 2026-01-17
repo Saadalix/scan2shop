@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block title %}Scan2Shop - Home{% endblock %}</title>
+    
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"> -->
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../static/base.css">
+    <link rel="stylesheet" href="../static/shop.css">
+    <link rel="stylesheet" href="../static/scan2shop.css">
+    {% block stylesheet %}
+        
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <div class="menuBox">
+            <div class="logoBox">
+               
+                <a href="/" class="logo"> Scan2Shop </a>
+            </div>
+
+            <nav class="navbar">
+                <a href="/">home</a>
+                <a href="/shop">shop</a>
+                <a href="/scan2shop" id="scan2shop">Scan2Shop</a>
+                <!-- <a href="contact.html">contact</a> -->
+            </nav>
+        </div>
+
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="cart-btn" class="fas fa-shopping-cart" onclick="Cart()"></div>
+            <div id="login-btn" class="fas fa-user" onclick="Account()"></div>
+        </div>
+
+        <form action="" class="search-form" onsubmit="Search(); return false;">
+            <input type="search" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search" onclick="Search()"></label>
+        </form>
+
+        <div class="shopping-cart" id="shoppingCart">
+            <div id="productsInCart">
+                
+            </div>
+            <h3 class="total" > total : <span id="cartTotal"></span> </h3>
+            <a class="btn" onclick="CheckOut()">checkout cart</a>
+        </div>
+
+        {% if name %}
+            <div class="login-form">
+                <h3>Account</h3>
+                <p class="username">Hello, {{name}}</p>
+                <button type="submit" class="btn" onclick="logoutUser()">Sign Out</button>
+            </div>
+        {% else %}
+            <div class="login-form">
+                <h3>login Account</h3>
+                <input type="email" placeholder="enter your email" class="box">
+                <input type="password" placeholder="enter your password" class="box">
+                <button type="submit" class="btn" onclick="loginUser()">login now</button>
+                <!-- <p>forget password? <a href="#">click here</a></p> -->
+                <p>don't have an account? <a class="linkBtn" id="create-btn">create one</a></p>
+            </div>
+
+            <div class="create-form">
+                <h3>Create Account</h3>
+                <input type="text" placeholder="enter name" class="box">
+                <input type="email" placeholder="enter email" class="box">
+                <input type="password" placeholder="enter password" class="box">
+                <input type="password" placeholder="confirm password" class="box">
+                <button onclick="CreateUser()" class="btn">Create</button>
+                <p>already have an account? <a class="linkBtn" onclick="loginBtn()">login</a></p>
+            </div>
+        {% endif %}
+        
+
+        
+
+    </header>
+    <!-- header section ends -->
+
+    {% block body %}
+    <section class="home">
+
+        <div class="slides-container">
+
+            <div class="slide active">
+                <div class="content">
+                    <span>fresh and organic</span>
+                    <h3>upto 50% off</h3>
+                    <a href="/shop" class="btn">shop now</a>
+                </div>
+                <div class="image">
+                    <img src="../static/images/new-home-img-1.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="content">
+                    <span>fresh and organic</span>
+                    <h3>upto 50% off</h3>
+                    <a href="/shop" class="btn">shop now</a>
+                </div>
+                <div class="image">
+                    <img src="../static/images/home-img-2.png" alt="">
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="content">
+                    <span>fresh and organic</span>
+                    <h3>upto 50% off</h3>
+                    <a href="/shop" class="btn">shop now</a>
+                </div>
+                <div class="image">
+                    <img src="../static/images/home-img-3.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div id="next-slide" class="fas fa-angle-right" onclick="next()"></div>
+        <div id="prev-slide" class="fas fa-angle-left" onclick="next()"></div>
+
+    </section>
+
+    <section class="banner-container">
+
+        <div class="banner">
+            <img src="../static/images/banner-1.jpg" alt="">
+            <div class="content">
+                <span>limited sales</span>
+                <h3>upto 50% off</h3>
+                <a href="/shop" class="btn">shop now</a>
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="../static/images/banner-2.jpg" alt="">
+            <div class="content">
+                <span>limited sales</span>
+                <h3>upto 50% off</h3>
+                <a href="/shop" class="btn">shop now</a>
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="../static/images/banner-3.jpg" alt="">
+            <div class="content">
+                <span>limited sales</span>
+                <h3>upto 50% off</h3>
+                <a href="/shop" class="btn">shop now</a>
+            </div>
+        </div>
+
+    </section>
+    {% endblock %}
+
+
+    {% block pageScript %}
+        
+    {% endblock %}
+
+    <!-- custom js file link  -->
+    <script src="../static/js/script.js"></script>
+    <section class="credit">Copyright ©2024 All Rights Reserved</section>
+</body>
+
+</html>

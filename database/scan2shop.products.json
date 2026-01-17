@@ -1,0 +1,159 @@
+[{
+  "_id": {
+    "$oid": "65e07535761a19e3b0ce2e18"
+  },
+  "SKU": "1",
+  "Title": "Surf Excel Liquid Detergent",
+  "slug": "surf-excel-liquid-detergent",
+  "Description": "Removes more tough stains first time. Removes stains even in cool water.",
+  "ImageSrc": "../static/products/product_1.jpg",
+  "Price": "34.89",
+  "Categories": [
+    "3"
+  ],
+  "stripe_price_id": "price_1OtJNZAD42YQTefNPMxxbqbk"
+},
+{
+  "_id": {
+    "$oid": "65e075f5761a19e3b0ce2e19"
+  },
+  "SKU": "2",
+  "Title": "Tomatoes Petite Diced With Jalapeno Cilantro Organic",
+  "slug": "tomatoes-petite-diced-with-jalapeno-cilantro-organic",
+  "Description": "by 365 Whole Foods Market",
+  "ImageSrc": "../static/products/product_2.jpg",
+  "Price": "35.99",
+  "Categories": [
+    "1",
+    "2",
+    "4"
+  ],
+  "stripe_price_id": "price_1OvJo8AD42YQTefNr1UoKZua"
+},
+{
+  "_id": {
+    "$oid": "65e077b2761a19e3b0ce2e1a"
+  },
+  "SKU": "3",
+  "Title": "Terrasoul Superfoods Organic Black Chia Seeds",
+  "slug": "terrasoul-superfoods-organic-black-chia-seeds",
+  "Description": "2.5 Pounds, Nutrient-Packed Superfood for Energy, Puddings, Smoothies, and Baking",
+  "ImageSrc": "../static/products/product_3.jpg",
+  "Price": "18.99",
+  "Categories": [
+    "1",
+    "2"
+  ],
+  "stripe_price_id": "price_1OvJotAD42YQTefNOikKItpT"
+},
+{
+  "_id": {
+    "$oid": "65e078da761a19e3b0ce2e1b"
+  },
+  "SKU": "4",
+  "Title": "Rosemary Mint Strengthening Shampoo",
+  "slug": "rosemary-mint-strengthening-shampoo",
+  "Description": "Biotin - Promotes Hair Growth & Scalp Health, Cleanses and Helps Strengthen Hair, 10.14 Fl Oz.",
+  "ImageSrc": "../static/products/product_4.jpg",
+  "Price": "8.49",
+  "Categories": [
+    "2",
+    "5"
+  ],
+  "stripe_price_id": "price_1OvLJnAD42YQTefN1N6igjgG"
+},
+{
+  "_id": {
+    "$oid": "65e0859a761a19e3b0ce2e1c"
+  },
+  "SKU": "5",
+  "Title": "Lundberg Brown Rice",
+  "slug": "lundberg-brown-rice",
+  "Description": "Whole Grain Rice that Clings Together When Cooked",
+  "ImageSrc": "../static/products/product_5.jpg",
+  "Price": "42.72",
+  "Categories": [
+    "2"
+  ],
+  "stripe_price_id": "price_1OvLKXAD42YQTefN9mFVJkFA"
+},
+{
+  "_id": {
+    "$oid": "65e09708761a19e3b0ce2e1d"
+  },
+  "SKU": "6",
+  "Title": "Earth's Best Organic Kids Snacks",
+  "slug": "earths-best-organic-kids-snacks",
+  "Description": "Organic Crunchin' Grahams for Toddlers 2 Year",
+  "ImageSrc": "../static/products/product_6.jpg",
+  "Price": "22.33",
+  "Categories": [
+    "3",
+    "4"
+  ],
+  "stripe_price_id": "price_1OvLL2AD42YQTefNUD0i2AeS"
+},
+{
+  "_id": {
+    "$oid": "65e098d2761a19e3b0ce2e1e"
+  },
+  "SKU": "7",
+  "Title": "IZZE Blackberry Juice",
+  "slug": "izze-blackberry-juice",
+  "Description": "No Sugar Added, 8.4 oz., 24/Carton",
+  "ImageSrc": "../static/products/product_7.jpg",
+  "Price": "29.94",
+  "Categories": [
+    "1",
+    "4"
+  ],
+  "stripe_price_id": "price_1OvLLbAD42YQTefNROG9Valt"
+},
+{
+  "_id": {
+    "$oid": "65e09a47761a19e3b0ce2e1f"
+  },
+  "SKU": "8",
+  "Title": "Mike's Mighty Good Craft Ramen Spicy Beef Soup Cup",
+  "slug": "mikes-mighty-good-craft-ramen-spicy-beef-soup-cup",
+  "Description": "Gluten Free and Vegetarian",
+  "ImageSrc": "../static/products/product_8.jpg",
+  "Price": "22.99",
+  "Categories": [
+    "1"
+  ],
+  "stripe_price_id": "price_1OvLMKAD42YQTefNUO4BJKVS"
+},
+{
+  "_id": {
+    "$oid": "65e09bb9761a19e3b0ce2e20"
+  },
+  "SKU": "9",
+  "Title": "Vaseline Intensive Care Lotion - Cocoa Radiant",
+  "slug": "vaseline-intensive-care-lotion-cocoa-radiant",
+  "Description": "Powerful moisturizers, and pure cocoa butter, in a rich, fast absorbing formula",
+  "ImageSrc": "../static/products/product_9.jpg",
+  "Price": "9.99",
+  "Categories": [
+    "2",
+    "3"
+  ],
+  "stripe_price_id": "price_1OvLMpAD42YQTefNdOg2XGqG"
+},
+{
+  "_id": {
+    "$oid": "65e09dca761a19e3b0ce2e21"
+  },
+  "SKU": "10",
+  "Title": "Colgate Optic White Advanced Teeth Whitening Toothpaste",
+  "slug": "colgate-optic-white-advanced-teeth-whitening-toothpaste",
+  "Description": "2% Hydrogen Peroxide Toothpaste, Pack of 3",
+  "ImageSrc": "../static/products/product_10.jpg",
+  "Price": "12.54",
+  "Categories": [
+    "2",
+    "3",
+    "5"
+  ],
+  "stripe_price_id": "price_1OvLNKAD42YQTefNLJhsqC8Y"
+}]

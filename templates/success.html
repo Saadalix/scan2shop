@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Payment Success
+{% endblock %}
+
+{% block content %}
+    
+{% endblock %}
+
+{% block pageScript %}
+    <script>
+        async function confirmPayment() {
+            try {
+                order_no = "{{ order_number }}"
+                serverURL = "{{ server_url }}"
+                const currentPort = window.location.port;
+                const apiUrl = `${serverURL}/confirm_payment`; // Change IP
+                const response = await fetch(apiUrl, {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                            order: order_no
+                    }),
+                });
+            
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+    
+                const data = await response.json();
+                if (data.success == true) {
+                    document.cookie = 'cart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                    window.location.href = `/`;
+                    alert(data.message);
+                } else {
+                    alert('Invalid Order Id')  
+                }
+    
+            } catch(error) {
+                console.error(error);
+            }
+        }
+
+        confirmPayment()
+    </script>
+{% endblock %}

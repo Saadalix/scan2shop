@@ -1,0 +1,13 @@
+.productIcon{
+    border-radius: 50%;
+}
+
+.box {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.category,
+.products {
+    padding: 3rem 9%;
+}

@@ -1,0 +1,22 @@
+#checkoutContainer {
+    height: 100%;
+    /* background: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-top: 5%;
+}
+
+#checkout_submit_btn{
+    background-color: #FF9248;
+    border: none;
+    color: black;
+}
+
+.font-size {
+font-size: small;
+}
+
+#email {
+    text-transform:none;
+}

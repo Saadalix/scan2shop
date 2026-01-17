@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "65e0b4ef761a19e3b0ce2e24"
+  },
+  "ID": "1",
+  "Title": "Groceries",
+  "path": "grocery"
+},
+{
+  "_id": {
+    "$oid": "65e0b52e761a19e3b0ce2e25"
+  },
+  "ID": "2",
+  "Title": "Personal Care",
+  "path": "personal-care"
+},
+{
+  "_id": {
+    "$oid": "65e0b541761a19e3b0ce2e26"
+  },
+  "ID": "3",
+  "Title": "Household",
+  "path": "household"
+},
+{
+  "_id": {
+    "$oid": "65e0b552761a19e3b0ce2e27"
+  },
+  "ID": "4",
+  "Title": "Food And Beverages",
+  "path": "food-and-beverages"
+},
+{
+  "_id": {
+    "$oid": "65e0b56b761a19e3b0ce2e28"
+  },
+  "ID": "5",
+  "Title": "Health And Wellness",
+  "path": "health-and-wellness"
+}]

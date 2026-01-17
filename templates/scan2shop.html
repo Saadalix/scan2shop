@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}
+        Scan2Shop
+{% endblock %}
+
+
+{% block stylesheet %}
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="../static/popup.css">
+{% endblock %}
+
+
+{% block body %}
+    <div class="cameraContainer">
+        <div style="width: 500px" id="reader"></div>
+    </div>
+
+    <div class="modal__container" id="modal-container">
+        <div class="modal__content">
+            <div class="modal__close close-modal" title="Close" id="close-modal" onclick="closeModel()">
+                <i class='bx bx-x'></i>
+            </div>
+
+            <img src="" alt="" class="modal__img" id="productImage">
+
+            <h1 class="modal__title" id="productTitle">Good Job!</h1>
+            <p class="modal__description" id="productDesc">Click the button to close</p>
+
+            <div class="productVaraibles">
+                <div class="modelTotalPrice">
+                    <h1>£ <span id="productPrice" ></span></h1>
+                </div>
+                
+                <div class="wrapper">
+                    <span class="minus">-</span>
+                    <span class="num">01</span>
+                    <span class="plus">+</span>
+                </div>
+            </div>
+
+            <button class="modal__button modal__button-width" id="addToCartBtn" onclick="AddToCart(this)">Add to Cart</button>
+
+            <a class="modal__button-link" id="viewProductBtn" onclick="ViewProduct(this)">View</a>
+        </div>
+    </div>
+   
+    <script src="../static/js/html5-qrcode.min.js"></script>
+    <script src="../static/js/scanner.js"></script>
+
+    <script>
+        serverURL = "{{ server_url }}"
+        let isFetching = false;
+        async function onScanSuccess(decodedText, decodedResult) {
+            // Handle on success condition with the decoded text or result.
+            //console.log(`${decodedText}`, decodedResult);
+            // alert(decodedText)
+            if (isFetching) {
+                console.log('A request is already in progress. Please wait for the response.');
+                return; // Exit the function if a request is already in progress
+            } else {
+                try {
+                    isFetching = true;
+                    const data = { SKU: decodedText };
+                    const port = window.location.port;
+                    const apiUl = `${serverURL}/readProductBySKU` // Change IP
+    
+                    const response = await PostCall(apiUl, data);
+                    console.log('Success:', response);
+                    if(response)
+                        // alert("Product Added!");
+                        // Show Model
+                        openModel(response);
+                    else
+                        alert("Product Unavailable")
+                  } catch (error) {
+                    console.error('Error:', error);
+                    alert("Invalid Product")
+                } finally {
+                    isFetching = false; // Reset the flag when the request is complete, regardless of success or failure
+                }
+            }      
+        }
+        
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
+
+    </script>
+{% endblock %}

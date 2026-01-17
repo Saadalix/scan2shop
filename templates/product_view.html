@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+      Shop - {{product.Title}}
+{% endblock %}
+
+
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="../static/product_view_2.css">
+{% endblock %}
+
+
+
+
+{% block body %}
+
+<div class="product_placeholder_div" ></div>
+
+<div class="product_view_layout">
+  <div class="product_view_container">
+      <div class="left_section">
+        <img src="{{product.ImageSrc}}" alt="Product Image" class="product_img">
+      </div>
+      <div class="right_section">
+        <div class="product_title"><span>{{product.Title}}</span></div>
+        <div class="product_desc"><span>{{product.Description}}</span></div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <div class="product_price">£<span id="productPrice" >{{product.Price}}</span></div>
+        <div class="product_details_box">
+          <div class="product_funcs_box">
+            <div class="wrapper">
+              <span class="minus">-</span>
+              <span class="num">{{quantity}}</span>
+              <span class="plus">+</span>
+            </div>
+            <button class="add_to_cart_button" data-sku="{{ product.SKU }}" onclick="addItemToCart(this)">Add to Cart</button>
+          </div>
+        </div> 
+      </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block pageScript %}
+  <script src="../static/js/product_view.js"></script>        
+{% endblock %}

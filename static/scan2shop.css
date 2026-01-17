@@ -1,0 +1,58 @@
+body { 
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-content: center; */
+}
+
+.video-container {
+    width: 100%;
+    padding-bottom: 56.25%; /* Aspect ratio: 16:9 (adjust as needed) */
+}
+
+#video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cameraContainer {
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Script Internal Styling */
+#html5-qrcode-button-camera-permission {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
+.modal__button-link{
+    cursor: pointer;
+}
+
+
+/* Mobile First i.e Smaller to Larger Devices */
+
+/* X-Small devices (portrait phones, less than 576px) */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 718px) { 
+
+    .product_view_container{
+        flex-direction: column;
+    }   
+
+    .product_img {
+        max-width: 100%;
+    }
+
+}
